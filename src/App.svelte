@@ -1,23 +1,19 @@
+<svelte:head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</svelte:head>
+
 <script>
-  import logo from './assets/svelte.png'
-  import Counter from './lib/Counter.svelte'
-
-  export let menu = 1;
-
+  import Navigation from './lib/Navigation.svelte'
+  import PortfolioCard from "./lib/PortfolioCard.svelte";
 </script>
 
 <main>
-  <ul id="menu">
-    <li><a href="/" on:click|preventDefault={() => (menu = 1)}>Home</a></li> |
-    <li><a href="/" on:click|preventDefault={() => (menu = 2)}>Portfolio</a></li> |
-    <li><a href="/" on:click|preventDefault={() => (menu = 2)}>Download My Resume</a></li>
-  </ul>
-
+  <Navigation />
   <!-- <img src={logo} alt="Svelte Logo" /> -->
   <h2>Welcome!</h2>
   <h1>I'm Muhammad Irfan Bisyr</h1>
 
-  <!-- <Counter /> -->
+  <PortfolioCard />
 
   <p>
     Three years experience in programmer / software engineer related field, 
@@ -37,15 +33,6 @@
     text-align: center;
     padding: 1em;
     margin: 0 auto;
-  }
-  
-  ul#menu li{
-		display : inline;
-	}
-  
-  img {
-    height: 16rem;
-    width: 16rem;
   }
 
   h1 {
