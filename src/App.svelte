@@ -4,17 +4,14 @@
 
 <script>
   import Navigation from './lib/Navigation.svelte'
-  import PortfolioCard from "./lib/PortfolioCard.svelte";
+  let menu;
 </script>
 
 <main>
-  <Navigation />
+  <Navigation bind:menu={menu}/>
   <!-- <img src={logo} alt="Svelte Logo" /> -->
   <h2>Welcome!</h2>
   <h1>I'm Muhammad Irfan Bisyr</h1>
-
-  <PortfolioCard />
-
   <p>
     Three years experience in programmer / software engineer related field, 
     seeking work opportunities as software engineer, web programmer or other IT related field, 
