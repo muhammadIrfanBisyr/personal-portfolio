@@ -1,10 +1,15 @@
 <svelte:head>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </svelte:head>
 
 <script>
+  
   import Navigation from './lib/Navigation.svelte'
+  import PortfolioCard from './lib/PortfolioCard.svelte'
+
   let menu;
+
 </script>
 
 <main>
@@ -18,6 +23,7 @@
     interested to learn more about current and future technology, especially in software development, 
     web development, both in industry and in daily use, while gaining valuable work experience and work in a team.
   </p>
+  <PortfolioCard />
 </main>
 
 <style>
@@ -30,6 +36,7 @@
     text-align: center;
     padding: 1em;
     margin: 0 auto;
+    background-color: #f0f0f0;
   }
 
   h1 {
