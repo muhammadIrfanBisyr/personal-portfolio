@@ -12,6 +12,9 @@
 </ul>
 
 <style>  
+    ul {
+        text-align: right;
+    }
     ul#menu li{
 		display : inline;
     }

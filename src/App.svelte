@@ -29,13 +29,12 @@
     }
 
     main {
-        text-align: center;
         padding: 1em;
         margin: 0 auto;
         background-color: #f0f0f0;
     }
 
-    h1 {
+    /* h1 {
         color: #ff3e00;
         font-size: 4rem;
         font-weight: 100;
@@ -58,5 +57,5 @@
         p {
             max-width: none;
         }
-    }
+    } */
 </style>
