@@ -4,6 +4,7 @@
 </svelte:head>
 
 <script>
+    import Main from './lib/Main.svelte';
     import Navigation from './lib/Navigation.svelte'
     import PortfolioCard from './lib/PortfolioCard.svelte'
 
@@ -13,15 +14,10 @@
 <main>
     <Navigation bind:menu={menu}/>  
     {#if menu === 0}
-        <h2>Welcome!</h2>
-        <h1>I'm Muhammad Irfan Bisyr</h1>
-    <p>
-        Three years experience in programmer / software engineer related field, 
-        seeking work opportunities as software engineer, web programmer or other IT related field, 
-        interested to learn more about current and future technology, especially in software development, 
-         web development, both in industry and in daily use, while gaining valuable work experience and work in a team.
-    </p>
+        <Main/>
     {:else if menu === 1}
+        <PortfolioCard />
+    {:else if menu === 2}
         <PortfolioCard />
     {/if}
 </main>
