@@ -19,9 +19,9 @@
         web development, both in industry and in daily use, while gaining valuable work experience and work in a team.
     </p>
     <div class='contact-group'>
-        <Logo source={githubLogo} alt='github' size={25}/>
-        <Logo source={gitlabLogo} alt='gitlab' size={25}/>
-        <Logo source={linkedinLogo} alt='linkedin' size={25}/>
+        <Logo source={linkedinLogo} alt='linkedin' size={25} link='https://www.linkedin.com/in/muhammad-irfan-bisyr'/>
+        <Logo source={githubLogo} alt='github' size={25} link='https://github.com/muhammadIrfanBisyr'/>
+        <Logo source={gitlabLogo} alt='gitlab' size={25} link='https://gitlab.com/muhammadIrfanBisyr'/>
     </div>
 </div>
 
