@@ -7,6 +7,7 @@
     import Main from './lib/Main.svelte';
     import Navigation from './lib/Navigation.svelte'
     import PortfolioCard from './lib/PortfolioCard.svelte'
+    import PortfolioList from './lib/PortfolioList.svelte'
 
     let menu;
 </script>
@@ -16,7 +17,7 @@
     {#if menu === 0}
         <Main/>
     {:else if menu === 1}
-        <PortfolioCard />
+        <PortfolioList />
     {:else if menu === 2}
         <PortfolioCard />
     {/if}
