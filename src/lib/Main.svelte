@@ -12,7 +12,7 @@
     import Logo from './Logo.svelte';
 </script>
 
-<div transition:slide="{{ duration: 300 }}">
+<div in:slide="{{ duration: 300 }}">
     <Container>
         <Row cols={2}>
             <Col>
@@ -22,9 +22,9 @@
                     <span class="text-years">3</span> years experience in programmer / software engineer related field.
                 </p>
                 <div class='contact-group'>
-                    <Logo source={linkedinLogo} alt='linkedin' size={25} link='https://www.linkedin.com/in/muhammad-irfan-bisyr'/>
-                    <Logo source={githubLogo} alt='github' size={25} link='https://github.com/muhammadIrfanBisyr'/>
-                    <Logo source={gitlabLogo} alt='gitlab' size={25} link='https://gitlab.com/muhammadIrfanBisyr'/>
+                    <Logo source={linkedinLogo} alt='linkedin' size={25} withLink link='https://www.linkedin.com/in/muhammad-irfan-bisyr'/>
+                    <Logo source={githubLogo} alt='github' size={25} withLink link='https://github.com/muhammadIrfanBisyr'/>
+                    <Logo source={gitlabLogo} alt='gitlab' size={25} withLink link='https://gitlab.com/muhammadIrfanBisyr'/>
                 </div>
             </Col>
             <Col>
