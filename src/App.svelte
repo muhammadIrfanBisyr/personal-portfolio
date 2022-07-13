@@ -12,8 +12,8 @@
     let menu;
 </script>
 
+<Navigation bind:menu={menu}/>  
 <main>
-    <Navigation bind:menu={menu}/>  
     {#if menu === 0}
         <Main/>
     {:else if menu === 1}
