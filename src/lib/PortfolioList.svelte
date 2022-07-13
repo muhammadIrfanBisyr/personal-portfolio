@@ -22,8 +22,20 @@
             },
             type: 'professional',
             name: 'Company2 Inc',
-            start: '7 June 2020',
-            end: '31 July 2021',
+            start: '31 September 2020',
+            end: '31 September 2021',
+            role: 'bbb'
+        },
+        {
+            jobTitle: 'Software Engineer 3',
+            location: {
+                city: 'Jakarta',
+                country: 'Indonesia'
+            },
+            type: 'professional',
+            name: 'Company3 Inc',
+            start: '31 September 2020',
+            end: '31 September 2021',
             role: 'bbb'
         },
         {
@@ -39,9 +51,11 @@
 
 <section class='portfolio-list'>
     <h2>Professional Projects</h2>
-    {#each professionalProjects as prj}
-        <CompanyCard {...prj} />
-    {/each}
+    <div class="card-deck">
+        {#each professionalProjects as prj}
+            <CompanyCard {...prj} />
+        {/each}
+    </div>
     <h2>Personal Projects</h2>
     {#each personalProjects as prj}
         {prj.description}
@@ -58,7 +72,7 @@
     @media only screen and (min-width: 640px) {
         .portfolio-list {
             margin: 0 auto;
-            width: 70%;
+            width: 80%;
         }
     }
 
