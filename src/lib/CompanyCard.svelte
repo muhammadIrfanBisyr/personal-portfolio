@@ -7,7 +7,8 @@
         CardHeader, 
         CardSubtitle, 
         CardText, 
-        Button
+        Button,
+        Icon
     } from 'sveltestrap';
 
     export let name = '';
@@ -27,10 +28,11 @@
     <img class='card-img-top' src={items} alt='a'/>
     <CardHeader> 
         <CardTitle class='card-title-name'>{name}</CardTitle>
-        <div>{`${start} - ${end}`}</div>
-        <div>
+        <div class="info-row"><Icon name='arrow-right-square-fill'/>{start}</div>
+        <div class="info-row"><Icon name='arrow-left-square-fill'/>{end}</div>
+        <div class="info-row">
             <img 
-                class='country-flag'
+                class="country-flag"
                 src={location.country === 'Japan' ? JapanFlag : IndonesiaFlag} 
                 alt={location.country} 
             /> 
@@ -51,18 +53,26 @@
         margin-bottom: 16px;
     }
     
-    :global(.card-title-name) {
-        /* margin-bottom: 0px !important; */
-    }
-
     :global(.align-right) {
         text-align: right;
     }
 
     .country-flag {
-        width: 30px;
         box-shadow: 1px 1px 5px 1px #b5b5b58f;
+    }
+
+    .info-row > *:first-child{
+        width: 24px;
         margin-right: 4px;
+        font-size: 24px;
+    }
+
+    :global(.bi-arrow-right-square-fill::before){
+        margin-right: 16px;
+    }
+
+    :global(.bi-arrow-left-square-fill::before){
+        margin-right: 16px;
     }
 
 </style>

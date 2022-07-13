@@ -11,7 +11,7 @@
                 country: 'Indonesia'
             },
             type: 'professional',
-            name: 'Company Inc',
+            name: 'PT Indodev Niaga (DataOn)',
             start: '7 June 2021',
             role: 'aaa'
         },
@@ -64,13 +64,13 @@
 </section>
 
 <style>
-    @media only screen and (max-width: 640px) {
+    @media only screen and (max-width: 960px) {
         .portfolio-list {
             margin: 0 auto;
             width: 100%;
         }
     }
-    @media only screen and (min-width: 640px) {
+    @media only screen and (min-width: 960px) {
         .portfolio-list {
             margin: 0 auto;
             width: 80%;
