@@ -17,7 +17,8 @@
     export let role = '';
     export let start = '';
     export let end = '';
-
+    export const viewDetail = () => {}
+    
     import JapanFlag from '../assets/logo/japan.png';
     import IndonesiaFlag from '../assets/logo/indonesia.png';
 
@@ -42,13 +43,13 @@
     <CardBody>
         <CardSubtitle>{jobTitle}</CardSubtitle>
         <CardText>{role}</CardText>
-        <Button color='primary'>View More</Button>
+        <Button on:click{viewDetail} color='primary'>View More</Button>
     </CardBody>
 </Card>
 
 <style>
     :global(.card-body-company){
-        box-shadow: 1px 1px 5px 1px #b5b5b58f;
+        box-shadow: 1px 1px 5px 3px #b5b5b58f;
         border: none !important;
         margin-bottom: 16px;
     }

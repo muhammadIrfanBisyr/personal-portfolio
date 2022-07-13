@@ -48,13 +48,28 @@
     const personalProjects = workplaces.filter((item) => item.type === 'personal')
     const professionalProjects = workplaces.filter((item) => item.type === 'professional')
 
+    let isViewDetail = false
+    let projectToview = 0
+
+    const resetView = () => {
+        isViewDetail = false
+        projectToview = 0
+    }
+
+    const viewDetail = (/** @type {number} */ projectNum) => {
+        projectToview = projectNum
+        isViewDetail = true
+
+        console.log(projectNum)
+    }
+    
 </script>
 
 <section in:slide="{{ duration: 300 }}" class='portfolio-list'>
-    <h2>Professional Projects</h2>
+    <h2>Work Experience </h2>
     <div class="card-deck">
-        {#each professionalProjects as prj}
-            <CompanyCard {...prj} />
+        {#each professionalProjects as prj, i}
+            <CompanyCard {...prj} viewDetail={() => viewDetail(i)} />
         {/each}
     </div>
     <h2>Personal Projects</h2>
@@ -81,5 +96,6 @@
         text-align: center;
         border-bottom: 8px solid #383eff;
         padding-bottom: 12px;
+        font-weight: bold;
     }
 </style>
