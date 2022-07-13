@@ -5,8 +5,8 @@
 
 <script>
     import Main from './lib/Main.svelte';
-    import Navigation from './lib/Navigation.svelte'
-    import PortfolioCard from './lib/PortfolioCard.svelte'
+    import Navigation from './lib/global/Navigation.svelte'
+    import PortfolioCard from './lib/portfolio/PortfolioCard.svelte'
     import PortfolioList from './lib/PortfolioList.svelte'
 
     let menu;

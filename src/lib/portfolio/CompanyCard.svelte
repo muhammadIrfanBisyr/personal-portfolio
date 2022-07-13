@@ -53,10 +53,6 @@
         border: none !important;
         margin-bottom: 16px;
     }
-    
-    :global(.align-right) {
-        text-align: right;
-    }
 
     .country-flag {
         box-shadow: 1px 1px 5px 1px #b5b5b58f;

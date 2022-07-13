@@ -9,7 +9,7 @@
 
     import mainPhoto from '../assets/image/main-photo.jpg'
 
-    import Logo from './Logo.svelte';
+    import Logo from './global/Logo.svelte';
 </script>
 
 <div in:slide="{{ duration: 300 }}">
