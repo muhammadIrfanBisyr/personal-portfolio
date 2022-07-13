@@ -1,6 +1,7 @@
 <script>
 
     import CompanyCard from "./CompanyCard.svelte";
+    import { slide } from "svelte/transition";
 
     const workplaces = [
         {
@@ -49,7 +50,7 @@
 
 </script>
 
-<section class='portfolio-list'>
+<section in:slide="{{ duration: 300 }}" class='portfolio-list'>
     <h2>Professional Projects</h2>
     <div class="card-deck">
         {#each professionalProjects as prj}
