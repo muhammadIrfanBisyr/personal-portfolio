@@ -28,7 +28,7 @@
     <img class='card-img-top' src={items} alt='a'/>
     <CardHeader> 
         <CardTitle class='card-title-name'>{name}</CardTitle>
-        <div class="info-row"><Icon name='arrow-right-square-fill'/>{start}</div>
+        <div class="info-row"><Icon name='arrow-right-square-fill' color='green'/>{start}</div>
         <div class="info-row"><Icon name='arrow-left-square-fill'/>{end}</div>
         <div class="info-row">
             <img 
@@ -65,6 +65,10 @@
         width: 24px;
         margin-right: 4px;
         font-size: 24px;
+    }
+
+    :global(.card-title-name) {
+        font-weight: bold;
     }
 
     :global(.bi-arrow-right-square-fill::before){
