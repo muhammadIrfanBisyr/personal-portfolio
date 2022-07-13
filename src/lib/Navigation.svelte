@@ -1,25 +1,33 @@
 <script>
-    import { Icon } from 'sveltestrap';
-    
+    import { Navbar, NavbarBrand, NavbarToggler, Nav, NavItem, NavLink, Collapse  } from 'sveltestrap';
+
+    let isOpen = false;
+
+    const handleUpdate = (event) => {
+        isOpen = event.detail.isOpen;
+    }
+
     export let menu = 0;
+    
 </script>
 
-<ul id="menu">
-    <li><a href="/" on:click|preventDefault={() => (menu = 0)}> <Icon name="house-door"/> Home</a></li> |
-    <li><a href="/" on:click|preventDefault={() => (menu = 1)}> <Icon name="file-earmark-text"/> Portfolio</a></li> |
-    <li><a href="/" on:click|preventDefault={() => (menu = 2)}> <Icon name="file-earmark-text"/> Certificate</a></li> |
-    <li><a href="/" on:click|preventDefault><Icon name="download"/> My Resume</a></li>
-</ul>
-
-<style>  
-    ul {
-        text-align: right;
-    }
-    ul#menu li{
-		display : inline;
-    }
-
-    a{
-        text-decoration: none;
-    }
-</style>
+<Navbar color='primary' dark expand="md">
+    <NavbarBrand href="/">IRFAN BISYR</NavbarBrand>
+    <NavbarToggler on:click={() => (isOpen = !isOpen)} />
+    <Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
+        <Nav class="ms-auto" navbar>
+            <NavItem>
+                <NavLink href="#" on:click={() => {menu = 0}}>Home</NavLink>
+            </NavItem>
+            <NavItem>
+                <NavLink href="#" on:click={() => {menu = 1}}>Portfolio</NavLink>
+            </NavItem>
+            <NavItem>
+                <NavLink href="#" on:click={() => {menu = 2}}>Certificate</NavLink>
+            </NavItem>
+            <NavItem>
+                <NavLink href="#">Resume</NavLink>
+            </NavItem>
+        </Nav>
+    </Collapse>
+</Navbar>
