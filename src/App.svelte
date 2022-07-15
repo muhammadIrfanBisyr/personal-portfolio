@@ -6,8 +6,8 @@
 <script>
     import Main from './lib/Main.svelte';
     import Navigation from './lib/global/Navigation.svelte'
-    import PortfolioCard from './lib/portfolio/PortfolioCard.svelte'
-    import PortfolioList from './lib/PortfolioList.svelte'
+    import CertificateList from './lib/certificate/CertificateList.svelte'
+    import PortfolioList from './lib/portfolio/PortfolioList.svelte'
 
     let menu;
 </script>
@@ -19,7 +19,7 @@
     {:else if menu === 1}
         <PortfolioList />
     {:else if menu === 2}
-        <PortfolioCard />
+        <CertificateList />
     {/if}
 </main>
 
@@ -28,35 +28,14 @@
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
             Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
+    
+    :global(body) {
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
 
     main {
         padding: 1em;
         margin: 0 auto;
-        background-color: #f0f0f0;
     }
-
-    /* h1 {
-        color: #ff3e00;
-        font-size: 4rem;
-        font-weight: 100;
-        line-height: 1.1;
-        margin: 2rem auto;
-        max-width: 14rem;
-    }
-
-    p {
-        max-width: 14rem;
-        margin: 1rem auto;
-        line-height: 1.35;
-    }
-
-    @media (min-width: 480px) {
-        h1 {
-            max-width: none;
-        }
-
-        p {
-            max-width: none;
-        }
-    } */
 </style>
