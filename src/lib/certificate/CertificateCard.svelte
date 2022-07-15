@@ -1,22 +1,20 @@
 <script>
     
-    import { 
-        Card, 
-        CardBody, 
-        CardTitle, 
-        CardHeader, 
-        CardSubtitle, 
-        CardText, 
-        Icon
-    } from 'sveltestrap';
+    import { getDownloadURL, ref } from 'firebase/storage'
+    import { storage } from '../../firebase'
+    
+    import { Card, CardBody, CardTitle, CardHeader, CardSubtitle, CardText, Icon } from 'sveltestrap';
 
-    import moment from 'moment';
+    import moment from 'moment'
 
-    export let name = '';
-    export let location = '';
-    export let date = '';
+    export let id = ''
+    export let name = ''
+    export let location = ''
+    export let date = ''
     export let description = ''
-    export let image = '';
+
+    $: image = ''
+    getDownloadURL(ref(storage, `cert_${id}.jpg`)).then((url) => image = url)
 
 </script>
 

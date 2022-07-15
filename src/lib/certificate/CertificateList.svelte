@@ -23,6 +23,12 @@
         {#each certificates as cert}
             <CertificateCard {...cert}/>
         {/each}
+        {#each certificates as cert}
+            <CertificateCard {...cert}/>
+        {/each}
+        {#each certificates as cert}
+            <CertificateCard {...cert}/>
+        {/each}
     </div>
 </section>
 
