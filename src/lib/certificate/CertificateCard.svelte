@@ -4,8 +4,7 @@
     import { storage } from '../../firebase'
     
     import { Card, CardBody, CardTitle, CardHeader, CardSubtitle, CardText, Icon } from 'sveltestrap';
-
-    import moment from 'moment'
+    import { formatFirebaseDate } from '../utils'
 
     export let id = ''
     export let name = ''
@@ -22,7 +21,7 @@
     <img class='card-img-top' src={image} alt='a'/>
     <CardHeader> 
         <CardTitle class='card-title-name'>{name}</CardTitle>
-        <CardSubtitle>{moment(date.toDate().toDateString(), 'ddd MMM DD YYYY').format('DD MMMM YYYY')}</CardSubtitle>
+        <CardSubtitle>{formatFirebaseDate(date)}</CardSubtitle>
         <CardSubtitle>{location}</CardSubtitle>
     </CardHeader>
     <CardBody>

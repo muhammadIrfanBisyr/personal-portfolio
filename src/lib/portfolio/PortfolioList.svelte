@@ -3,50 +3,21 @@
     import CompanyCard from "./CompanyCard.svelte";
     import { slide } from "svelte/transition";
 
-    const workplaces = [
-        {
-            jobTitle: 'Software Engineer',
-            location: {
-                city: 'Jakarta',
-                country: 'Indonesia'
-            },
-            type: 'professional',
-            name: 'PT Indodev Niaga (DataOn)',
-            start: '7 June 2021',
-            role: 'aaa'
-        },
-        {
-            jobTitle: 'Software Engineer',
-            location: {
-                city: 'Tokyo',
-                country: 'Japan'
-            },
-            type: 'professional',
-            name: 'Company2 Inc',
-            start: '31 September 2020',
-            end: '31 September 2021',
-            role: 'bbb'
-        },
-        {
-            jobTitle: 'Software Engineer 3',
-            location: {
-                city: 'Jakarta',
-                country: 'Indonesia'
-            },
-            type: 'professional',
-            name: 'Company3 Inc',
-            start: '31 September 2020',
-            end: '31 September 2021',
-            role: 'bbb'
-        },
-        {
-            description: 'nothing personal kids',
-            type: 'personal',
-        },
-    ]
+    import { query, collection, onSnapshot, orderBy } from "firebase/firestore"; 
+    import { db } from '../../firebase'
 
-    const personalProjects = workplaces.filter((item) => item.type === 'personal')
-    const professionalProjects = workplaces.filter((item) => item.type === 'professional')
+    $: workplaces = [];
+    
+    const _query = query(collection(db, "workplaces"), orderBy('start', 'desc'));
+    const unsubscribe = onSnapshot(_query, (querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            workplaces = [...workplaces, {...doc.data(), id: doc.id}];
+            console.log(doc.data())
+        });
+    });
+
+    $: personalProjects = workplaces?.filter((item) => item.type === 'personal') ?? []
+    $: professionalProjects = workplaces?.filter((item) => item.type === 'professional') ?? []
 
     let isViewDetail = false
     let projectToview = 0

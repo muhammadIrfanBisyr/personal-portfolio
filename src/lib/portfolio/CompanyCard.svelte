@@ -11,6 +11,8 @@
         Icon
     } from 'sveltestrap';
 
+    import {formatFirebaseDate} from '../utils'
+
     export let name = '';
     export let jobTitle = '';
     export let location = {};
@@ -29,8 +31,8 @@
     <img class='card-img-top' src={items} alt='a'/>
     <CardHeader> 
         <CardTitle class='card-title-name'>{name}</CardTitle>
-        <div class="info-row"><Icon name='arrow-right-square-fill' color='green'/>{start}</div>
-        <div class="info-row"><Icon name='arrow-left-square-fill'/>{end}</div>
+        <div class="info-row"><Icon name='arrow-right-square-fill' color='green'/>{formatFirebaseDate(start)}</div>
+        <div class="info-row"><Icon name='arrow-left-square-fill'/>{formatFirebaseDate(end)}</div>
         <div class="info-row">
             <img 
                 class="country-flag"

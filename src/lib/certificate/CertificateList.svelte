@@ -1,9 +1,10 @@
 <script>
-    import { query, collection, onSnapshot } from "firebase/firestore"; 
-    import { db } from '../../firebase'
-
+   
     import { slide } from "svelte/transition";
     import CertificateCard from './CertificateCard.svelte' 
+
+    import { query, collection, onSnapshot } from "firebase/firestore"; 
+    import { db } from '../../firebase'
 
     $: certificates = [];
 
