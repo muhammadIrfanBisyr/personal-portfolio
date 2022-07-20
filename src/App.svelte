@@ -15,16 +15,14 @@
 <Navigation bind:menu={menu}/>  
 <main>
     {#if menu === 0}
-        <Main/>
+        <Main bind:menu={menu}/>
     {:else if menu === 1}
         <PortfolioList />
     {:else if menu === 2}
         <CertificateList />
     {/if}
 </main>
-<div class="footer">
-    <p>Footer</p>
-</div>
+
 
 <style>
     :root {
@@ -41,13 +39,4 @@
         margin: 0 auto;
     }
 
-    .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: red;
-        color: white;
-        text-align: center;
-    }
 </style>

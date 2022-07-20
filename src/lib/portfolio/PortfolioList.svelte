@@ -37,13 +37,13 @@
 </script>
 
 <section in:slide="{{ duration: 300 }}" class='portfolio-list'>
-    <h2>Work Experience </h2>
+    <h2 class="list-title">Work Experience </h2>
     <div class="card-deck">
         {#each professionalProjects as prj, i}
             <CompanyCard {...prj} viewDetail={() => viewDetail(i)} />
         {/each}
     </div>
-    <h2>Personal Projects</h2>
+    <h2 class="list-title">Personal Projects</h2>
     {#each personalProjects as prj}
         {prj.description}
     {/each}
@@ -54,6 +54,8 @@
         .portfolio-list {
             margin: 0 auto;
             width: 100%;
+            padding-left: 0.5em;
+            padding-right: 0.5em;
         }
     }
     @media only screen and (min-width: 960px) {
@@ -69,4 +71,9 @@
         padding-bottom: 12px;
         font-weight: bold;
     }
+
+    .list-title {
+        margin-top: 10px;
+    }
+
 </style>

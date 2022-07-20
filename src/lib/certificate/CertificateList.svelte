@@ -19,7 +19,7 @@
 </script>
 
 <section in:slide="{{ duration: 300 }}" class='certificate-list'>
-    <h2>Work Experience </h2>
+    <h2> Certificate </h2>
     <div class="card-deck">
         {#each certificates as cert}
             <CertificateCard {...cert}/>
