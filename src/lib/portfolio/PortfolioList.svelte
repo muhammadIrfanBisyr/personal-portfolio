@@ -1,6 +1,7 @@
 <script>
 
     import CompanyCard from "./CompanyCard.svelte";
+    import PersonalProjectList from "./PersonalProjectList.svelte";
     import { slide } from "svelte/transition";
 
     import { query, collection, onSnapshot, orderBy } from "firebase/firestore"; 
@@ -12,7 +13,6 @@
     onSnapshot(_query, (querySnapshot) => {
         querySnapshot.forEach((doc) => {
             workplaces = [...workplaces, {...doc.data(), id: doc.id}];
-            console.log(doc.data())
         });
     });
 
@@ -44,10 +44,11 @@
         {/each}
     </div>
     <h2 class="list-title">Personal Projects</h2>
-    {#each personalProjects as prj}
-        {prj.description}
-        {JSON.stringify(prj.projects)}
-    {/each}
+    <div class="card-deck">
+        {#each personalProjects as prj}
+            <PersonalProjectList {...prj}/>
+        {/each}
+    </div>
 </section>
 
 <style>
