@@ -1,10 +1,12 @@
 <script>
     
     import { getDoc } from "firebase/firestore"; 
+    import PortfolioCard from "./PortfolioCard.svelte";
 
     export let projects = [];  
 
     $: projectList = [];
+
     const getItems = async () => {
         const itemDocs = await Promise.all(projects.map(item => getDoc(item)));        
         itemDocs.forEach(item => {
@@ -18,6 +20,6 @@
 
 <div class='personal-project'>
     {#each projectList as prj}
-        {prj.id}
+        <PortfolioCard {...prj}/>
     {/each}
 </div>
