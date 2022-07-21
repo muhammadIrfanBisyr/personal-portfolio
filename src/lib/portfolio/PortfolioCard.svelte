@@ -16,7 +16,6 @@
     } from 'sveltestrap';
 
     import Logo from '../global/Logo.svelte';
-    import {getImageUrl} from '../utils';
 
     let activeIndex = 0;
     const items = [
@@ -43,17 +42,17 @@
                         <CardSubtitle>Summary</CardSubtitle>
                         <CardText>{description}</CardText>
                         <CardSubtitle>Language</CardSubtitle>
-                        <CardText>
-                        
+                        <CardText>                        
                         {#each language as lang}
-                            <Logo source={getImageUrl(lang)}/>
+                            <Logo name={lang}/>
                         {/each}
-                        
                         </CardText>
                         <CardSubtitle>Tools / Framework</CardSubtitle>
-                        <CardText>{description}</CardText>
-                        <CardSubtitle>Environment</CardSubtitle>
-                        <CardText>{description}</CardText>
+                        <CardText>                        
+                        {#each tools as tool}
+                            <Logo name={tool}/>
+                        {/each}
+                        </CardText>
                     </Col>
                     <Col>
                         <Carousel {items} bind:activeIndex>

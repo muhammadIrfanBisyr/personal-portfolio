@@ -1,21 +1,22 @@
 <script>
 
+    import logos from '../../assets/logo'
     import { Tooltip } from "sveltestrap"
 
-    export let source = ''
-    export let alt = ''
+    export let name = ''
     export let size = 25
     export let link = '#'
-    export let withLink = false
+
+    const logoName = (name === 'C#' ? 'csharp' : name).toLocaleLowerCase().replace(/\s/g,'');
     
 </script>
 
-{#if withLink}
-    <a id={`logo-link-${alt}`} href={link}>
-        <img src={source} alt={alt} width={size} height={size}>
+{#if link !== '#'}
+    <a id={`logo-link-${logoName}`} href={link}>
+        <img src={logos[logoName]} alt={logoName} width={size} height={size}>
     </a>
-    <Tooltip target={`logo-link-${alt}`} placement='bottom'>{alt}</Tooltip>
+    <Tooltip target={`logo-link-${logoName}`} placement='bottom'>{name}</Tooltip>
 {:else}
-    <img src={source} alt={alt} width={size} height={size}>
-    <Tooltip target={`logo-link-${alt}`} placement='bottom'>{alt}</Tooltip>
+    <img id={`logo-link-${logoName}`} src={logos[logoName]} alt={logoName} width={size} height={size}>
+    <Tooltip target={`logo-link-${logoName}`} placement='bottom'>{name}</Tooltip>
 {/if}

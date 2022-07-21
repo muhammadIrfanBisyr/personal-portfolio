@@ -4,11 +4,6 @@
     import { Button } from 'sveltestrap'
 
     import mainBackground from '../assets/image/main-background.jpg'
-
-    import githubLogo from '../assets/logo/github.png'
-    import gitlabLogo from '../assets/logo/gitlab.png'
-    import linkedinLogo from '../assets/logo/linkedin.png'
-
     import Logo from './global/Logo.svelte';
 
     export let menu;
@@ -27,9 +22,9 @@
             <Button color='info'>Download My Resume</Button>
         </div>
         <div class='contact-group'>
-            <Logo source={linkedinLogo} alt='linkedin' size={25} withLink link='https://www.linkedin.com/in/muhammad-irfan-bisyr'/>
-            <Logo source={githubLogo} alt='github' size={25} withLink link='https://github.com/muhammadIrfanBisyr'/>
-            <Logo source={gitlabLogo} alt='gitlab' size={25} withLink link='https://gitlab.com/muhammadIrfanBisyr'/>
+            <Logo name='linkedin' size={25} link='https://www.linkedin.com/in/muhammad-irfan-bisyr'/>
+            <Logo name='github' size={25} link='https://github.com/muhammadIrfanBisyr'/>
+            <Logo name='gitlab' size={25} link='https://gitlab.com/muhammadIrfanBisyr'/>
         </div>
     </div>
 </section>
