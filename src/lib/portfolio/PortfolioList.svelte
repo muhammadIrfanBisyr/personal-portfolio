@@ -69,7 +69,7 @@
     .portfolio-list h2{
         text-align: center;
         
-        margin: 12px 0px 12px;
+        margin: 24px 0px 24px;
 
         padding-bottom: 12px;
         font-weight: bold;

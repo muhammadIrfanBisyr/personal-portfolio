@@ -37,7 +37,7 @@
     <img class='card-img-top card-img' src={image} alt='a'/>
     <CardHeader> 
         <CardTitle class='card-title-name'>{name}</CardTitle>
-        <div class="info-row"><Icon name='arrow-right-square-fill' color='green'/>{formatFirebaseDate(start)}</div>
+        <div class="info-row"><Icon name='arrow-right-square-fill'/>{formatFirebaseDate(start)}</div>
         <div class="info-row"><Icon name='arrow-left-square-fill'/>{formatFirebaseDate(end)}</div>
         <div class="info-row">
             <img 
@@ -74,7 +74,7 @@
     }
 
     .card-img{
-        height: 250px;
+        height: 220px;
         object-fit: cover;
     }
 
@@ -84,10 +84,13 @@
 
     :global(.bi-arrow-right-square-fill::before){
         margin-right: 16px;
+        color: #20cc20;
     }
 
     :global(.bi-arrow-left-square-fill::before){
         margin-right: 16px;
+        color: #f40000;
+
     }
     
     p {
