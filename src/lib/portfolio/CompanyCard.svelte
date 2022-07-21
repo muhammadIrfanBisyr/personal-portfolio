@@ -22,6 +22,7 @@
     export let start = '';
     export let end = '';
     export let id = '';
+    export let description = '';
     export const viewDetail = () => {}
     
     import JapanFlag from '../../assets/logo/japan.png'
@@ -33,7 +34,7 @@
 </script>
 
 <Card class='card-body-company'>
-    <img class='card-img-top' src={image} alt='a'/>
+    <img class='card-img-top card-img' src={image} alt='a'/>
     <CardHeader> 
         <CardTitle class='card-title-name'>{name}</CardTitle>
         <div class="info-row"><Icon name='arrow-right-square-fill' color='green'/>{formatFirebaseDate(start)}</div>
@@ -50,6 +51,7 @@
     <CardBody>
         <CardSubtitle>{jobTitle}</CardSubtitle>
         <CardText>{role}</CardText>
+        <p>{description}</p>
         <Button on:click{viewDetail} color='primary'>View More</Button>
     </CardBody>
 </Card>
@@ -71,6 +73,11 @@
         font-size: 24px;
     }
 
+    .card-img{
+        height: 250px;
+        object-fit: cover;
+    }
+
     :global(.card-title-name) {
         font-weight: bold;
     }
@@ -81,6 +88,10 @@
 
     :global(.bi-arrow-left-square-fill::before){
         margin-right: 16px;
+    }
+    
+    p {
+        text-align: justify;
     }
 
 </style>
