@@ -23,7 +23,7 @@
             <span class="text-years">3</span> years experience in programmer / software engineer related field.
         </p>
         <div class='button-group'>
-            <Button color='primary' on:click={() => menu = 1}>View Portfolio</Button>
+            <Button color='primary' on:click={() => menu = 1}>View My Experience</Button>
             <Button color='info'>Download My Resume</Button>
         </div>
         <div class='contact-group'>

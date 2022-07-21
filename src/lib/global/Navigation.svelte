@@ -20,7 +20,7 @@
                 <NavLink href="#" on:click={() => {menu = 0}}>Home</NavLink>
             </NavItem>
             <NavItem>
-                <NavLink href="#" on:click={() => {menu = 1}}>Portfolio</NavLink>
+                <NavLink href="#" on:click={() => {menu = 1}}>Experience</NavLink>
             </NavItem>
             <NavItem>
                 <NavLink href="#" on:click={() => {menu = 2}}>Certificate</NavLink>

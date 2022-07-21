@@ -9,7 +9,7 @@
     $: workplaces = [];
     
     const _query = query(collection(db, "workplaces"), orderBy('start', 'desc'));
-    const unsubscribe = onSnapshot(_query, (querySnapshot) => {
+    onSnapshot(_query, (querySnapshot) => {
         querySnapshot.forEach((doc) => {
             workplaces = [...workplaces, {...doc.data(), id: doc.id}];
             console.log(doc.data())
@@ -46,6 +46,7 @@
     <h2 class="list-title">Personal Projects</h2>
     {#each personalProjects as prj}
         {prj.description}
+        {JSON.stringify(prj.projects)}
     {/each}
 </section>
 
@@ -67,9 +68,17 @@
 
     .portfolio-list h2{
         text-align: center;
-        border-bottom: 8px solid #383eff;
+        
+        margin: 12px 0px 12px;
+
         padding-bottom: 12px;
         font-weight: bold;
+        
+        background-image: linear-gradient(to right, #007bff, #007bff);
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        background-size: 15% 8px;
+
     }
 
     .list-title {
