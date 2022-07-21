@@ -44,11 +44,9 @@
         {/each}
     </div>
     <h2 class="list-title">Personal Projects</h2>
-    <div class="card-deck">
-        {#each personalProjects as prj}
-            <PersonalProjectList {...prj}/>
-        {/each}
-    </div>
+    {#each personalProjects as prj}
+        <PersonalProjectList {...prj}/>
+    {/each}
 </section>
 
 <style>

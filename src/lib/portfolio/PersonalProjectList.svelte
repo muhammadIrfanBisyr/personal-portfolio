@@ -19,7 +19,9 @@
 </script>
 
 <div class='personal-project'>
-    {#each projectList as prj}
-        <PortfolioCard {...prj}/>
-    {/each}
+    <div class="card-deck">
+        {#each projectList as prj}
+            <PortfolioCard {...prj}/>
+        {/each}
+    </div>
 </div>

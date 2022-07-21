@@ -8,6 +8,8 @@ import gitlab from './gitlab.png'
 import linkedin from './linkedin.png'
 import react from './react.png'
 import unity3d from './unity3d.png'
+import svelte from './svelte.png'
+import firebase from './firebase.png'
 
 export default {
     python,
@@ -19,5 +21,7 @@ export default {
     gitlab,
     linkedin,
     unity3d,
-    react
+    react,
+    svelte,
+    firebase
 }

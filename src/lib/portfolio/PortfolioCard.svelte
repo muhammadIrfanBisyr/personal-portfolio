@@ -10,9 +10,8 @@
         CarouselIndicators,
         CarouselItem,
         CarouselControl,
-        Row,
-        Col,
-        Container
+        Button,
+        Icon
     } from 'sveltestrap';
 
     import Logo from '../global/Logo.svelte';
@@ -30,48 +29,46 @@
     export let tools = [];
 </script>
 
-<div class="portfolio-card">
-    <Card>
-        <CardHeader> 
-            <CardTitle>{name}</CardTitle>
-        </CardHeader>
-        <CardBody>
-            <Container>
-                <Row>
-                    <Col>
-                        <CardSubtitle>Summary</CardSubtitle>
-                        <CardText>{description}</CardText>
-                        <CardSubtitle>Language</CardSubtitle>
-                        <CardText>                        
-                        {#each language as lang}
-                            <Logo name={lang}/>
-                        {/each}
-                        </CardText>
-                        <CardSubtitle>Tools / Framework</CardSubtitle>
-                        <CardText>                        
-                        {#each tools as tool}
-                            <Logo name={tool}/>
-                        {/each}
-                        </CardText>
-                    </Col>
-                    <Col>
-                        <Carousel {items} bind:activeIndex>
-                            <CarouselIndicators bind:activeIndex {items} />
-                        
-                            <div class="carousel-inner">
-                            {#each items as item, index}
-                                <CarouselItem bind:activeIndex itemIndex={index}>
-                                <img src={item} class="d-block w-100" alt={`${item} ${index + 1}`} />
-                                </CarouselItem>
-                            {/each}
-                            </div>
-                        
-                            <CarouselControl direction="prev" bind:activeIndex {items} />
-                            <CarouselControl direction="next" bind:activeIndex {items} />
-                        </Carousel>
-                    </Col>
-                </Row>
-            </Container>
-        </CardBody>
-    </Card>
-</div>
+<Card>
+    <Carousel {items} bind:activeIndex>
+        <CarouselIndicators bind:activeIndex {items} />
+        <div class="carousel-inner">
+        {#each items as item, index}
+            <CarouselItem bind:activeIndex itemIndex={index}>
+            <img src={item} class="d-block w-100" alt={`${item} ${index + 1}`} />
+            </CarouselItem>
+        {/each}
+        </div>
+        <CarouselControl direction="prev" bind:activeIndex {items} />
+        <CarouselControl direction="next" bind:activeIndex {items} />
+    </Carousel>  
+    <CardHeader>
+        <div class="button-group">
+            <Button color='primary'> View </Button>
+            <Button> Code</Button> 
+        </div>
+        <CardTitle>{name}</CardTitle>
+    </CardHeader>
+    <CardBody>
+        <CardSubtitle>Summary</CardSubtitle>
+        <CardText>{description}</CardText>
+        <CardSubtitle>Language</CardSubtitle>
+        <CardText>                        
+        {#each language as lang}
+            <Logo name={lang}/>
+        {/each}
+        </CardText>
+        <CardSubtitle>Tools / Framework</CardSubtitle>
+        <CardText>                        
+        {#each tools as tool}
+            <Logo name={tool}/>
+        {/each}
+        </CardText>
+    </CardBody>
+</Card>
+
+<style>
+    .button-group {
+        text-align: center;
+    }
+</style>
