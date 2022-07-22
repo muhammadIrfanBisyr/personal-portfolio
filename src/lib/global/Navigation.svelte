@@ -34,6 +34,6 @@
 
 <style>
     :global(.navbar-dark .navbar-nav .nav-link){
-        color: white;
+        color: white !important;
     }
 </style>

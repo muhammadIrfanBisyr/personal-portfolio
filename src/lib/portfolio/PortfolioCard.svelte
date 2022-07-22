@@ -31,7 +31,7 @@
     export let rules = {};
 </script>
 
-<Card>
+<Card class='card-body-portfolio'>
     <Carousel {items} bind:activeIndex>
         <CarouselIndicators bind:activeIndex {items} />
         <div class="carousel-inner">
@@ -67,6 +67,12 @@
 </Card>
 
 <style>
+    :global(.card-body-portfolio){
+        box-shadow: 1px 1px 5px 3px #b5b5b58f;
+        border: none !important;
+        margin-bottom: 16px;
+    }
+
     :global(.card-title-name) {
         font-weight: bold;
         text-align: center;
