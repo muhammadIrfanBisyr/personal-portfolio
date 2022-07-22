@@ -10,10 +10,9 @@
         CarouselIndicators,
         CarouselItem,
         CarouselControl,
-        Button,
-        Icon
     } from 'sveltestrap';
 
+    import ButtonGroup from './ButtonGroup.svelte';
     import Logo from '../global/Logo.svelte';
 
     let activeIndex = 0;
@@ -27,6 +26,9 @@
     export let name = '';
     export let language = [];
     export let tools = [];
+    export let codeUrl = '#';
+    export let liveUrl = '#';
+    export let rules = {};
 </script>
 
 <Card>
@@ -43,11 +45,8 @@
         <CarouselControl direction="next" bind:activeIndex {items} />
     </Carousel>  
     <CardHeader>
-        <div class="button-group">
-            <Button color='primary'> View </Button>
-            <Button> Code</Button> 
-        </div>
-        <CardTitle>{name}</CardTitle>
+        <CardTitle class='card-title-name'>{name}</CardTitle>
+        <ButtonGroup codeUrl={codeUrl} liveUrl={liveUrl} rules={rules} />
     </CardHeader>
     <CardBody>
         <CardSubtitle>Summary</CardSubtitle>
@@ -68,7 +67,8 @@
 </Card>
 
 <style>
-    .button-group {
+    :global(.card-title-name) {
+        font-weight: bold;
         text-align: center;
     }
 </style>

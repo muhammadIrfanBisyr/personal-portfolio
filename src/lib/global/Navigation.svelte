@@ -31,3 +31,9 @@
         </Nav>
     </Collapse>
 </Navbar>
+
+<style>
+    :global(.navbar-dark .navbar-nav .nav-link){
+        color: white;
+    }
+</style>
