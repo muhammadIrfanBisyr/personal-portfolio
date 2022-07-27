@@ -27,6 +27,7 @@
     export let name = '';
     export let language = [];
     export let tools = [];
+    export let learningPoints = [];
     export let codeUrl = '#';
     export let liveUrl = '#';
     export let rules = {};
@@ -51,8 +52,8 @@
             </CarouselItem>
         {/each}
         </div>
-        <CarouselControl direction="prev" bind:activeIndex {items} />
-        <CarouselControl direction="next" bind:activeIndex {items} />
+        <!-- <CarouselControl direction="prev" bind:activeIndex {items} />
+        <CarouselControl direction="next" bind:activeIndex {items} /> -->
     </Carousel>  
     <CardHeader>
         <CardTitle class='card-title-name'>{name}</CardTitle>
@@ -61,6 +62,12 @@
     <CardBody>
         <CardSubtitle>Summary</CardSubtitle>
         <CardText>{description}</CardText>
+        <CardSubtitle>Key Learning Points</CardSubtitle>
+        <ul class='portfolio-learning-list'>
+            {#each learningPoints as lp}
+                <li>{lp}</li>
+            {/each}
+        </ul>
         <CardSubtitle>Language</CardSubtitle>
         <CardText>                        
         {#each language as lang}
@@ -77,6 +84,16 @@
 </Card>
 
 <style>
+
+    .portfolio-learning-list {
+        padding-left: 16px;
+    }
+
+    :global(.card-subtitle) {
+        margin-bottom: 8px !important;
+        font-size: 1.1em;
+    }
+
     :global(.card-body-portfolio){
         box-shadow: 1px 1px 5px 3px #b5b5b58f;
         border: none !important;
