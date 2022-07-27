@@ -28,6 +28,9 @@
             <NavItem>
                 <NavLink href="#">Resume</NavLink>
             </NavItem>
+            <NavItem>
+                <NavLink href="#" on:click={() => {menu = 3}}>Contact</NavLink>
+            </NavItem>
         </Nav>
     </Collapse>
 </Navbar>

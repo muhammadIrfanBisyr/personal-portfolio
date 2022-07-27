@@ -8,6 +8,7 @@
     import Navigation from './lib/global/Navigation.svelte'
     import CertificateList from './lib/certificate/CertificateList.svelte'
     import PortfolioList from './lib/portfolio/PortfolioList.svelte'
+    import Contact from './lib/contact/Contact.svelte'
 
     let menu;
 </script>
@@ -20,6 +21,8 @@
         <PortfolioList />
     {:else if menu === 2}
         <CertificateList />
+    {:else if menu === 3}
+        <Contact />
     {/if}
 </main>
 
