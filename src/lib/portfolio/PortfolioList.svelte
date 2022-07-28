@@ -2,10 +2,17 @@
 
     import CompanyCard from "./CompanyCard.svelte";
     import PersonalProjectList from "./PersonalProjectList.svelte";
+    import PortfolioModal from "./PortfolioModal.svelte";
     import { slide } from "svelte/transition";
 
     import { query, collection, onSnapshot, orderBy } from "firebase/firestore"; 
     import { db } from '../../firebase'
+
+    let isModalOpen = false;
+    $: selectedProject = '';
+
+    const openModal = (selId) => { isModalOpen = true; selectedProject = selId };
+    const closeModal = () => { isModalOpen = false};
 
     $: workplaces = [];
     
@@ -18,29 +25,22 @@
 
     $: personalProjects = workplaces?.filter((item) => item.type === 'personal') ?? []
     $: professionalProjects = workplaces?.filter((item) => item.type === 'professional') ?? []
-
-    let isViewDetail = false
-    let projectToview = 0
-
-    const resetView = () => {
-        isViewDetail = false
-        projectToview = 0
-    }
-
-    const viewDetail = (/** @type {number} */ projectNum) => {
-        projectToview = projectNum
-        isViewDetail = true
-
-        console.log(projectNum)
-    }
     
 </script>
 
 <section in:slide="{{ duration: 300 }}" class='portfolio-list'>
-    <h2 class="list-title">Work Experience </h2>
+
+    <PortfolioModal 
+        openModal={isModalOpen} 
+        toggleModal={closeModal} 
+        companyId={selectedProject}
+        companyList={professionalProjects} 
+    />
+
+    <h2 class="list-title"> Work Experience </h2>
     <div class="card-deck">
-        {#each professionalProjects as prj, i}
-            <CompanyCard {...prj} viewDetail={() => viewDetail(i)} />
+        {#each professionalProjects as prj}
+            <CompanyCard {...prj} toggleModal={() => openModal(prj.id)} />
         {/each}
     </div>
     <h2 class="list-title">Personal Projects</h2>

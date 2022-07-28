@@ -9,7 +9,6 @@
         Carousel, 
         CarouselIndicators,
         CarouselItem,
-        CarouselControl,
     } from 'sveltestrap';
 
     import ButtonGroup from './ButtonGroup.svelte';

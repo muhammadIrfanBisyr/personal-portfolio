@@ -1,17 +1,8 @@
 <script>
     
-    import { 
-        Card, 
-        CardBody, 
-        CardTitle, 
-        CardHeader, 
-        CardSubtitle, 
-        CardText, 
-        Button,
-        Icon
-    } from 'sveltestrap';
+    import { Card, CardBody, CardTitle, CardHeader, CardSubtitle, CardText, Button, Icon } from 'sveltestrap';
 
-    import {formatFirebaseDate} from '../utils'
+    import { formatFirebaseDate } from '../utils'
     import { getDownloadURL, ref } from 'firebase/storage'
     import { storage } from '../../firebase'
 
@@ -23,7 +14,7 @@
     export let end = '';
     export let id = '';
     export let description = '';
-    export const viewDetail = () => {}
+    export let toggleModal = () => {};
     
     import JapanFlag from '../../assets/logo/japan.png'
     import IndonesiaFlag from '../../assets/logo/indonesia.png';
@@ -35,6 +26,7 @@
 
 <Card class='card-body-company'>
     <img class='card-img-top card-img' src={image} alt='a'/>
+
     <CardHeader> 
         <CardTitle class='card-title-name'>{name}</CardTitle>
         <div class="info-row"><Icon name='arrow-right-square-fill'/>{formatFirebaseDate(start)}</div>
@@ -52,7 +44,7 @@
         <CardSubtitle>{jobTitle}</CardSubtitle>
         <CardText>{role}</CardText>
         <p>{description}</p>
-        <Button on:click{viewDetail} color='primary'>View More</Button>
+        <Button color='primary' on:click={toggleModal}>View Projects</Button>
     </CardBody>
 </Card>
 

@@ -9,10 +9,9 @@
     $: certificates = [];
 
     const _query = query(collection(db, "certificates"));
-    const unsubscribe = onSnapshot(_query, (querySnapshot) => {
+    onSnapshot(_query, (querySnapshot) => {
         querySnapshot.forEach((doc) => {
             certificates = [...certificates, {...doc.data(), id: doc.id}];
-            console.log(doc.data())
         });
     });
 
