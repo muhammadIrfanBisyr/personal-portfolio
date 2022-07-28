@@ -11,6 +11,10 @@ import unity3d from './unity3d.png'
 import svelte from './svelte.png'
 import firebase from './firebase.png'
 import email from './email.png'
+import tensorflow from './tensorflow.png'
+import postman from './postman.png'
+import c from './c.png'
+import adobecoldfusion from './adobecoldfusion.png'
 
 export default {
     python,
@@ -25,5 +29,9 @@ export default {
     react,
     svelte,
     firebase,
-    email
+    email,
+    tensorflow,
+    postman,
+    c,
+    adobecoldfusion
 }

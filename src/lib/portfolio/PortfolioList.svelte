@@ -29,14 +29,15 @@
 </script>
 
 <section in:slide="{{ duration: 300 }}" class='portfolio-list'>
-
-    <PortfolioModal 
-        openModal={isModalOpen} 
-        toggleModal={closeModal} 
-        companyId={selectedProject}
-        companyList={professionalProjects} 
-    />
-
+    {#if isModalOpen}
+        <PortfolioModal 
+            openModal={isModalOpen} 
+            toggleModal={closeModal} 
+            companyId={selectedProject}
+            companyList={professionalProjects} 
+        />
+    {/if}
+  
     <h2 class="list-title"> Work Experience </h2>
     <div class="card-deck">
         {#each professionalProjects as prj}

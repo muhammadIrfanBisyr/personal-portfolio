@@ -16,7 +16,7 @@
     const getItems = async (companyProjects) => {
         const itemDocs = await Promise.all(companyProjects.map(item => getDoc(item))) ?? [];        
         itemDocs.forEach(item => {
-            projectList.push({...item.data(), id: item.id})
+            projectList = [...projectList, {...item.data(), id: item.id}]
         })
     }
     
@@ -24,7 +24,7 @@
 
 </script>
 
-<Modal isOpen={openModal} toggle={toggleModal}>
+<Modal isOpen={openModal} toggle={toggleModal} size='lg' scrollable>
     <ModalHeader>{companyData.name}</ModalHeader>
     <ModalBody>
         {#each projectList as prj}
