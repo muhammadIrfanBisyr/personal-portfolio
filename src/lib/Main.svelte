@@ -5,6 +5,7 @@
 
     import mainBackground from '../assets/image/main-background.jpg'
     import Logo from './global/Logo.svelte';
+    import {contacts} from './contact/Contacts'
 
     export let menu;
 </script>
@@ -22,9 +23,9 @@
             <Button color='info'>Download My Resume</Button>
         </div>
         <div class='contact-group'>
-            <Logo name='linkedin' size={25} link='https://www.linkedin.com/in/muhammad-irfan-bisyr'/>
-            <Logo name='github' size={25} link='https://github.com/muhammadIrfanBisyr'/>
-            <Logo name='gitlab' size={25} link='https://gitlab.com/muhammadIrfanBisyr'/>
+            {#each contacts as cont}
+                <Logo name={cont.name} size={25} link={cont.url}/>
+            {/each}
         </div>
     </div>
 </section>

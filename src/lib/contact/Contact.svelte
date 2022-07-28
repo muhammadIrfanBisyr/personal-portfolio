@@ -1,19 +1,70 @@
 <script>
     import { slide } from "svelte/transition";
-    import { Input, Button, Icon, Tooltip } from "sveltestrap";
+    import { Button, Icon, Card, CardBody } from "sveltestrap";
     import Logo from "../global/Logo.svelte";
+    import {contacts} from './Contacts'
+
+    const newContacts = [{name: 'email', url:'irfan100397@gmail.com'}].concat(contacts);
 </script>
 
 <section in:slide="{{ duration: 300 }}" class='contact-page'>
-    <h2> Contacts</h2>
-    <Logo name='linkedin' size={30}/>
-    <Input disabled type="url" name="url" id="exampleUrl" placeholder="url placeholder" value='https://www.linkedin.com/in/muhammad-irfan-bisyr' />
-    <Button><Icon name='clipboard-plus'/></Button>
-    <Logo name='github' size={30}/>
-    <Input disabled type="url" name="url" id="exampleUrl" placeholder="url placeholder" value='https://github.com/muhammadIrfanBisyr'/>
-    <Button><Icon name='clipboard-plus'/></Button>
-    <Logo name='gitlab' size={30}/>
-    <Input disabled type="url" name="url" id="exampleUrl" placeholder="url placeholder" value='https://gitlab.com/muhammadIrfanBisyr'/>
-    <Button><Icon name='clipboard-plus'/></Button>
+    <h2> Contacts </h2>
+    <Card class="card-contact">
+        <CardBody>
+            {#each newContacts as cont}
+                <div class="contact-group">
+                    <Logo name={cont.name} size={30}/>
+                    <span class='contact-url'> <a href={cont.name !== 'email' ? cont.url : '#'}>{cont.url}</a></span>
+                    <Button color='primary'><Icon name='clipboard-plus'/></Button>
+                </div>
+            {/each}
+        </CardBody>
+    </Card>
 
 </section>
+
+<style>
+
+    .contact-page {
+        margin: 0 auto;
+        max-width: 60%;
+    }
+
+    .contact-url {
+        padding-left: 8px;
+        display: inline-block;
+        width: 90%;
+        height: 32px;
+        overflow: hidden;
+        border: 1px solid #cdcdcd;
+        vertical-align: middle;
+        border-radius: 4px;
+        background-color: #e3e3e3;
+        color: #4a4a4a;
+    }
+
+    .contact-group {
+        margin-bottom: 8px;
+    }
+
+    :global(.card-contact){
+        box-shadow: 1px 1px 5px 3px #b5b5b58f;
+        border: none !important;
+        margin-bottom: 16px;
+    }
+
+    h2{
+        text-align: center;
+        
+        margin: 24px 0px 24px;
+
+        padding-bottom: 12px;
+        font-weight: bold;
+        
+        background-image: linear-gradient(to right, #007bff, #007bff);
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        background-size: 15% 8px;
+
+    }
+</style>

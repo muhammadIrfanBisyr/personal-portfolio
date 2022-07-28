@@ -10,6 +10,7 @@ import react from './react.png'
 import unity3d from './unity3d.png'
 import svelte from './svelte.png'
 import firebase from './firebase.png'
+import email from './email.png'
 
 export default {
     python,
@@ -23,5 +24,6 @@ export default {
     unity3d,
     react,
     svelte,
-    firebase
+    firebase,
+    email
 }
