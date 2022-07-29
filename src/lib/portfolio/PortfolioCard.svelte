@@ -35,7 +35,7 @@
     const images = new Array(numImages).fill(0);
 
     const getAllImages = async () => {
-        items = await Promise.all(images.map((_, index) => getDownloadURL(ref(storage, `project_${id}_${index+1}.png`))));        
+        items = await Promise.all(images.map((_, index) => getDownloadURL(ref(storage, `project_${id}_${index+1}.jpg`))));        
     }
 
     getAllImages();
@@ -70,7 +70,7 @@
         <CardSubtitle>Language</CardSubtitle>
         <CardText>                        
         {#each language as lang}
-            <Logo name={lang}/>
+            <Logo name={lang} unique={id}/>
         {/each}
         </CardText>
         {#if tools.length > 0}
@@ -78,7 +78,7 @@
         {/if}
         <CardText>                        
         {#each tools as tool}
-            <Logo name={tool}/>
+            <Logo name={tool} unique={id}/>
         {/each}
         </CardText>
     </CardBody>

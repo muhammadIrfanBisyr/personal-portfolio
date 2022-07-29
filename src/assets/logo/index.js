@@ -19,6 +19,8 @@ import onnx from './onnx.png'
 import circleci from './circleci.png'
 import nodejs from './nodejs.png'
 import webrtc from './webrtc.png'
+import django from './django.png'
+import bootstrap from './bootstrap.png'
 
 export default {
     python,
@@ -41,5 +43,7 @@ export default {
     onnx,
     circleci,
     nodejs,
-    webrtc
+    webrtc,
+    django,
+    bootstrap
 }

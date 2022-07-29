@@ -24,7 +24,7 @@
 
 </script>
 
-<Modal isOpen={openModal} toggle={toggleModal} size='lg' scrollable>
+<Modal isOpen={openModal} toggle={toggleModal} scrollable>
     <ModalHeader>{companyData.name}</ModalHeader>
     <ModalBody>
         {#each projectList as prj}

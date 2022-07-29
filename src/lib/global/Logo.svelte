@@ -6,17 +6,17 @@
     export let name = ''
     export let size = 25
     export let link = '#'
+    export let unique = ''
 
     const logoName = (name === 'C#' ? 'csharp' : name).toLocaleLowerCase().replace(/\s/g,'');
     
 </script>
 
 {#if link !== '#'}
-    <a id={`logo-link-${logoName}`} href={link}>
+    <a id={`logo-link-${logoName}-${unique}`} href={link}>
         <img src={logos[logoName]} alt={logoName} width={size} height={size}>
     </a>
-    <Tooltip target={`logo-link-${logoName}`} placement='bottom'>{name}</Tooltip>
 {:else}
-    <img id={`logo-link-${logoName}`} src={logos[logoName]} alt={logoName} width={size} height={size}>
-    <Tooltip target={`logo-link-${logoName}`} placement='bottom'>{name}</Tooltip>
+    <img id={`logo-link-${logoName}-${unique}`} src={logos[logoName]} alt={logoName} width={size} height={size}>
 {/if}
+<Tooltip target={`logo-link-${logoName}-${unique}`} placement='bottom'>{name}</Tooltip>
