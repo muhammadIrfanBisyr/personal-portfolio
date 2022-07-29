@@ -73,7 +73,9 @@
             <Logo name={lang}/>
         {/each}
         </CardText>
-        <CardSubtitle>Tools / Framework</CardSubtitle>
+        {#if tools.length > 0}
+            <CardSubtitle>Tools / Framework</CardSubtitle>
+        {/if}
         <CardText>                        
         {#each tools as tool}
             <Logo name={tool}/>

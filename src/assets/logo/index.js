@@ -15,6 +15,10 @@ import tensorflow from './tensorflow.png'
 import postman from './postman.png'
 import c from './c.png'
 import adobecoldfusion from './adobecoldfusion.png'
+import onnx from './onnx.png'
+import circleci from './circleci.png'
+import nodejs from './nodejs.png'
+import webrtc from './webrtc.png'
 
 export default {
     python,
@@ -33,5 +37,9 @@ export default {
     tensorflow,
     postman,
     c,
-    adobecoldfusion
+    adobecoldfusion,
+    onnx,
+    circleci,
+    nodejs,
+    webrtc
 }
