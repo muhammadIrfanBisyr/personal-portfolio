@@ -30,6 +30,7 @@
     export let codeUrl = '#';
     export let liveUrl = '#';
     export let rules = {};
+    export let environment = [];
     export let numImages = 0;
     
     const images = new Array(numImages).fill(0);
@@ -79,6 +80,14 @@
         <CardText>                        
         {#each tools as tool}
             <Logo name={tool} unique={id}/>
+        {/each}
+        </CardText>
+        {#if environment.length > 0}
+            <CardSubtitle>Development Environment</CardSubtitle>
+        {/if}
+        <CardText>                        
+        {#each environment as env}
+            <Logo name={env} unique={id}/>
         {/each}
         </CardText>
     </CardBody>

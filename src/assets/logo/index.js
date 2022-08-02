@@ -21,6 +21,9 @@ import nodejs from './nodejs.png'
 import webrtc from './webrtc.png'
 import django from './django.png'
 import bootstrap from './bootstrap.png'
+import windows10 from './windows10.png'
+import raspberrypi from './raspberrypi.png'
+import ubuntu from './ubuntu.png'
 
 export default {
     python,
@@ -45,5 +48,8 @@ export default {
     nodejs,
     webrtc,
     django,
-    bootstrap
+    bootstrap,
+    windows10,
+    raspberrypios: raspberrypi,
+    "ubuntu18.4": ubuntu
 }
