@@ -60,7 +60,7 @@
     </CardHeader>
     <CardBody>
         <CardSubtitle>Summary</CardSubtitle>
-        <CardText>{description}</CardText>
+        <CardText><p>{description}</p></CardText>
         <CardSubtitle>Key Learning Points</CardSubtitle>
         <ul class='portfolio-learning-list'>
             {#each learningPoints as lp}
@@ -104,5 +104,9 @@
     :global(.card-title-name) {
         font-weight: bold;
         text-align: center;
+    }
+
+    p {
+        text-align: justify;
     }
 </style>
