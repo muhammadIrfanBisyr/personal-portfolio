@@ -24,6 +24,8 @@ import bootstrap from './bootstrap.png'
 import windows10 from './windows10.png'
 import raspberrypi from './raspberrypi.png'
 import ubuntu from './ubuntu.png'
+import docker from './docker.png'
+import azure from './azure.png'
 
 export default {
     python,
@@ -51,5 +53,7 @@ export default {
     bootstrap,
     windows10,
     raspberrypios: raspberrypi,
-    "ubuntu18.4": ubuntu
+    "ubuntu18.4": ubuntu,
+    docker,
+    azure
 }
