@@ -1,6 +1,6 @@
 <script>
     import { slide } from "svelte/transition";
-    import { Button, Icon, Card, CardBody } from "sveltestrap";
+    import { Button, Icon, Card, CardBody, Tooltip } from "sveltestrap";
     import Logo from "../global/Logo.svelte";
     import {contacts} from './Contacts'
 
@@ -9,13 +9,17 @@
 
 <section in:slide="{{ duration: 300 }}" class='contact-page'>
     <h2> Contacts </h2>
+    <h5> If you have questions or suggestion, please feel free to contact me.</h5>
     <Card class="card-contact">
         <CardBody>
             {#each newContacts as cont}
                 <div class="contact-group">
                     <Logo name={cont.name} size={30}/>
                     <span class='contact-url'> <a href={cont.name !== 'email' ? cont.url : '#'}>{cont.url}</a></span>
-                    <Button color='primary'><Icon name='clipboard-plus'/></Button>
+                    <Button id={`btn-${cont.name}`} color='primary' on:click={() => navigator.clipboard.writeText(cont.url)}>
+                        <Icon name='clipboard-plus'/>
+                    </Button>
+                    <Tooltip target={`btn-${cont.name}`}> Copy To Clipboard </Tooltip>
                 </div>
             {/each}
         </CardBody>
@@ -50,7 +54,7 @@
     :global(.card-contact){
         box-shadow: 1px 1px 5px 3px #b5b5b58f;
         border: none !important;
-        margin-bottom: 16px;
+        margin: 16px 0px 16px;
     }
 
     h2{
@@ -66,5 +70,9 @@
         background-repeat: no-repeat;
         background-size: 15% 8px;
 
+    }
+
+    h5 {
+        text-align: center;
     }
 </style>

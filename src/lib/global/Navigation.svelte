@@ -12,7 +12,7 @@
 </script>
 
 <Navbar color='primary' dark expand="md">
-    <NavbarBrand href="/">IRFAN BISYR</NavbarBrand>
+    <NavbarBrand href="#">IRFAN BISYR</NavbarBrand>
     <NavbarToggler on:click={() => (isOpen = !isOpen)} />
     <Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
         <Nav class="ms-auto" navbar>
@@ -22,9 +22,9 @@
             <NavItem>
                 <NavLink href="#" on:click={() => {menu = 1}}>Experience</NavLink>
             </NavItem>
-            <NavItem>
+            <!-- <NavItem>
                 <NavLink href="#" on:click={() => {menu = 2}}>Certificate</NavLink>
-            </NavItem>
+            </NavItem> -->
             <NavItem>
                 <NavLink href="#">Resume</NavLink>
             </NavItem>
