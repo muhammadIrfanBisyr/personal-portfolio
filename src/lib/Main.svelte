@@ -7,6 +7,12 @@
     import Logo from './global/Logo.svelte';
     import {contacts} from './contact/Contacts'
 
+    import { ref, getDownloadURL } from 'firebase/storage'
+    import { storage } from '../firebase'
+
+    $: resumeUrl = '#';        
+    getDownloadURL(ref(storage, 'Resume.pdf')).then((res) => resumeUrl = res);
+    
     export let menu;
 </script>
 
@@ -20,7 +26,7 @@
         </p>
         <div class='button-group'>
             <Button color='primary' on:click={() => menu = 1}>View My Experience</Button>
-            <Button color='info'>Download My Resume</Button>
+            <Button color='info' href={resumeUrl}>Download My Resume</Button>
         </div>
         <div class='contact-group'>
             {#each contacts as cont}

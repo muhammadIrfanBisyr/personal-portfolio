@@ -13,7 +13,6 @@
 
     import ButtonGroup from './ButtonGroup.svelte';
     import PortfolioCardLogoList from './PortfolioCardLogoList.svelte';
-    import Logo from '../global/Logo.svelte';
     
     import { ref, getDownloadURL } from 'firebase/storage'
     import { storage } from '../../firebase'

@@ -1,11 +1,16 @@
 <script>
     import { Navbar, NavbarBrand, NavbarToggler, Nav, NavItem, NavLink, Collapse  } from 'sveltestrap';
+    import { ref, getDownloadURL } from 'firebase/storage'
+    import { storage } from '../../firebase'
 
     let isOpen = false;
 
     const handleUpdate = (event) => {
         isOpen = event.detail.isOpen;
     }
+
+    $: resumeUrl = '#';        
+    getDownloadURL(ref(storage, 'Resume.pdf')).then((res) => resumeUrl = res);
 
     export let menu = 0;
     
@@ -26,7 +31,7 @@
                 <NavLink href="#" on:click={() => {menu = 2}}>Certificate</NavLink>
             </NavItem> -->
             <NavItem>
-                <NavLink href="#">Resume</NavLink>
+                <NavLink href={resumeUrl}>Resume</NavLink>
             </NavItem>
             <NavItem>
                 <NavLink href="#" on:click={() => {menu = 3}}>Contacts</NavLink>
