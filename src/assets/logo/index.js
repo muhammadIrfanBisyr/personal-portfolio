@@ -53,6 +53,7 @@ export default {
     bootstrap,
     windows10,
     raspberrypios: raspberrypi,
+    raspberrypi4: raspberrypi,
     "ubuntu18.4": ubuntu,
     docker,
     azure

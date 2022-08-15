@@ -12,8 +12,8 @@
     } from 'sveltestrap';
 
     import ButtonGroup from './ButtonGroup.svelte';
+    import PortfolioCardLogoList from './PortfolioCardLogoList.svelte';
     import Logo from '../global/Logo.svelte';
-
     
     import { ref, getDownloadURL } from 'firebase/storage'
     import { storage } from '../../firebase'
@@ -31,6 +31,7 @@
     export let liveUrl = '#';
     export let rules = {};
     export let environment = [];
+    export let devices = [];
     export let numImages = 0;
     
     const images = new Array(numImages).fill(0);
@@ -68,28 +69,10 @@
                 <li>{lp}</li>
             {/each}
         </ul>
-        <CardSubtitle>Language</CardSubtitle>
-        <CardText>                        
-        {#each language as lang}
-            <Logo name={lang} unique={id}/>
-        {/each}
-        </CardText>
-        {#if tools.length > 0}
-            <CardSubtitle>Tools / Framework</CardSubtitle>
-        {/if}
-        <CardText>                        
-        {#each tools as tool}
-            <Logo name={tool} unique={id}/>
-        {/each}
-        </CardText>
-        {#if environment.length > 0}
-            <CardSubtitle>Development Environment</CardSubtitle>
-        {/if}
-        <CardText>                        
-        {#each environment as env}
-            <Logo name={env} unique={id}/>
-        {/each}
-        </CardText>
+        <PortfolioCardLogoList cardId={id} logoList={language} title='Language'/>
+        <PortfolioCardLogoList cardId={id} logoList={tools} title='Tools / Framework'/>
+        <PortfolioCardLogoList cardId={id} logoList={environment} title='Development Environment'/>
+        <PortfolioCardLogoList cardId={id} logoList={devices} title='Devices'/>
     </CardBody>
 </Card>
 
@@ -100,7 +83,8 @@
     }
 
     :global(.card-subtitle) {
-        margin-bottom: 8px !important;
+        margin-bottom: 4px !important;
+        margin-top: 4px !important;
         font-size: 1.1em;
     }
 
