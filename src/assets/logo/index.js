@@ -26,6 +26,9 @@ import raspberrypi from './raspberrypi.png'
 import ubuntu from './ubuntu.png'
 import docker from './docker.png'
 import azure from './azure.png'
+import apple from './apple.png'
+import azurekinectdk from './azurekinectdk.png'
+import lookingglassmonitor from './lookingglassmonitor.jpg'
 
 export default {
     python,
@@ -56,5 +59,8 @@ export default {
     raspberrypi4: raspberrypi,
     "ubuntu18.4": ubuntu,
     docker,
-    azure
+    azure,
+    azurekinectdk,
+    iphone12pro: apple,
+    lookingglassmonitor
 }
