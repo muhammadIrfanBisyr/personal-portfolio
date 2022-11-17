@@ -19,39 +19,37 @@
     export let menu;
 </script>
 
-<section class="main-section">
-    <div class="main-background" style="background-image: url({mainBackground});"/>
+<section class="main-section" style="background-image: url({mainBackground});">
     <div class="main-text">
         <h1>Welcome!</h1>
         <h1 class="title-name">I'm Muhammad Irfan Bisyr</h1>
-        <div class="main-row">
+        <div class="main-row" in:slide="{{ duration: 500 }}">
             <Container>
                 <Row>
                     <Col>
-                        <div in:slide="{{ duration: 300 }}">
-                            <h1>3+ Years</h1>
-                            of Software Engineer Experience
-                        </div>
+                        <h1>3+ Years</h1>
+                        of Software Engineer Experience
                     </Col>
                     <Col>
-                        <div in:slide="{{ duration: 300 }}">
-                            <h1>2 Country</h1>
-                            <img 
-                                class="country-flag"
-                                src={JapanFlag} 
-                                alt='Japan' 
-                            /> 
-                            <img 
-                                class="country-flag"
-                                src={IndonesiaFlag} 
-                                alt='Indonesia'
-                            /> 
-                        </div>
+                        <h1>2 Country</h1>
+                        <img 
+                            class="country-flag"
+                            src={JapanFlag} 
+                            alt='Japan' 
+                        /> 
+                        <img 
+                            class="country-flag"
+                            src={IndonesiaFlag} 
+                            alt='Indonesia'
+                        /> 
                     </Col>
                     <Col>
-                        <div in:slide="{{ duration: 300 }}">
-                            <h1>5+ Technology</h1>
-                        </div>
+                        <h1>5+ Technology</h1>
+                        <Logo name='React' size={25}/>
+                        <Logo name='Python' size={25}/>
+                        <Logo name='C' size={25}/>
+                        <Logo name='Javascript' size={25}/>
+                        <Logo name='Django' size={25}/>
                     </Col>
                 </Row>
             </Container>
@@ -84,21 +82,11 @@
 
     .main-section {
         text-align: center;
-    }
-
-    .main-background {
-        z-index: -1;
         height: 100%;
         width: 100%;
         background-size: cover;
-        background-position: 0% 45%;
-        top: 0;
-
-        position: absolute;
-        filter: blur(4px);
-        -webkit-filter: blur(4px);
     }
-
+    
     .main-text {
         color: white;
         font-weight: bold;
