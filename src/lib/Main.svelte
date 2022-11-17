@@ -1,7 +1,7 @@
 <script>
     
     import { slide } from 'svelte/transition'
-    import { Button, Container, Row, Col } from 'sveltestrap'
+    import { Button } from 'sveltestrap'
 
     import mainBackground from '../assets/image/main-background.jpg'
     import Logo from './global/Logo.svelte';
@@ -19,48 +19,54 @@
     export let menu;
 </script>
 
-<section class="main-section" style="background-image: url({mainBackground});">
+<section class="main-section">
+    <div class="main-background" style="background-image: url({mainBackground});"> </div>
     <div class="main-text">
-        <h1>Welcome!</h1>
+        <h1 class="title-name">Welcome!</h1>
         <h1 class="title-name">I'm Muhammad Irfan Bisyr</h1>
-        <div class="main-row" in:slide="{{ duration: 500 }}">
-            <Container>
-                <Row>
-                    <Col>
-                        <h1>3+ Years</h1>
-                        of Software Engineer Experience
-                    </Col>
-                    <Col>
-                        <h1>2 Country</h1>
-                        <img 
-                            class="country-flag"
-                            src={JapanFlag} 
-                            alt='Japan' 
-                        /> 
-                        <img 
-                            class="country-flag"
-                            src={IndonesiaFlag} 
-                            alt='Indonesia'
-                        /> 
-                    </Col>
-                    <Col>
-                        <h1>5+ Technology</h1>
-                        <Logo name='React' size={25}/>
-                        <Logo name='Python' size={25}/>
-                        <Logo name='C' size={25}/>
-                        <Logo name='Javascript' size={25}/>
-                        <Logo name='Django' size={25}/>
-                    </Col>
-                </Row>
-            </Container>
+        <div class="card-deck main-row" in:slide="{{ duration: 500 }}">
+            <div class="card main-info">
+                <h1 class="main-info-title">3+ Years</h1>
+                <p class='main-info-text'>of Software Engineer Experience</p>
+            </div>
+            <div class="card main-info">
+                <h1 class="main-info-title">2 Country</h1>
+                <span>
+                    <img 
+                        class="country-flag"
+                        src={JapanFlag} 
+                        alt='Japan' 
+                    /> 
+                    <img 
+                        class="country-flag"
+                        src={IndonesiaFlag} 
+                        alt='Indonesia'
+                    /> 
+                </span>
+               
+            </div>
+            <div class="card main-info">
+                <h1 class="main-info-title" >5+ Technology</h1>
+                <span class="main-tech-group">
+                    <Logo name='React'/>
+                    <Logo name='Python'/>
+                    <Logo name='C'/>
+                    <Logo name='Javascript' />
+                    <Logo name='Django'/>
+                </span>
+            </div>
         </div>
         <div class='button-group'>
-            <Button color='primary' on:click={() => menu = 1}>View My Experience</Button>
-            <Button color='info' href={resumeUrl}>Download My Resume</Button>
+            <Button color='primary' on:click={() => menu = 1}>
+                <span class="button-text">My Experience</span>
+            </Button>
+            <Button color='info' href={resumeUrl}>
+                <span class="button-text">My Resume</span>
+            </Button>
         </div>
         <div class='contact-group'>
             {#each contacts as cont}
-                <Logo name={cont.name} size={25} link={cont.url}/>
+                <Logo name={cont.name} link={cont.url}/>
             {/each}
         </div>
     </div>
@@ -71,20 +77,38 @@
         justify-content: space-between;
     }
 
-    .button-group {
-        margin-bottom: 8px;
-    }
-
     .title-name {
-        font-weight: bold;
-        font-size: 36pt;
+        font-weight: bolder;
+        font-size: 5vh;
+        margin-bottom: 16px;
     }
 
+    .button-group{
+        margin: 16px;
+    }
+
+    .button-text{
+        font-size: 2vh;
+        font-weight: bold;
+    }
+    
     .main-section {
         text-align: center;
+    }
+
+    .main-background{
         height: 100%;
         width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
         background-size: cover;
+        background-position: 0% 45%;
+        top: 0;
+        z-index: -1;
+
+        position: absolute;
+        filter: blur(4px);
+        -webkit-filter: blur(4px);
     }
     
     .main-text {
@@ -96,12 +120,25 @@
         margin-right: 0.5em;
     }
 
-    .main-row {
+    .main-info{
+        background: rgba(0,0,0,0);
+        border: 0px;
+    }
+
+    .main-info-text {
+        font-size: 2vh;
+    }
+
+    .main-info-title {
         font-weight: bold;
-        margin: 42px;
+        font-size: 4.5vh;
+    }
+
+    .main-row {
+        margin: 0 auto;
     }
 
     .main-row img {
-        width: 40px;
+        width: 5vh;
     }
 </style>

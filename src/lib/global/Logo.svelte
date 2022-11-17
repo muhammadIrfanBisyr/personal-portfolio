@@ -4,7 +4,6 @@
     import { Tooltip } from "sveltestrap"
 
     export let name = ''
-    export let size = 25
     export let link = '#'
     export let unique = ''
 
@@ -14,9 +13,16 @@
 
 {#if link !== '#'}
     <a id={`logo-link-${logoName}-${unique}`} href={link}>
-        <img src={logos[logoName]} alt={logoName} width={size} height={size}>
+        <img class="logo-style" src={logos[logoName]} alt={logoName}>
     </a>
 {:else}
-    <img id={`logo-link-${logoName}-${unique}`} src={logos[logoName]} alt={logoName} width={size} height={size}>
+    <img class="logo-style" id={`logo-link-${logoName}-${unique}`} src={logos[logoName]} alt={logoName}>
 {/if}
 <Tooltip target={`logo-link-${logoName}-${unique}`} placement='bottom'>{name}</Tooltip>
+
+<style>
+    .logo-style{
+        width: 4vh;
+        margin: 8px;
+    }
+</style>
